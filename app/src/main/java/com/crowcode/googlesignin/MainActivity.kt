@@ -40,6 +40,10 @@ class MainActivity : ComponentActivity() {
                         "Emad",
                         Modifier.padding(innerPadding)
                     )
+                    Greeting(
+                        "Rabie",
+                        Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
@@ -49,7 +53,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     val localContext = LocalContext.current
-    
+
     Text(
         text = "Hello $name",
         fontSize = 24.sp,

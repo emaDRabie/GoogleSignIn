@@ -40,10 +40,7 @@ class MainActivity : ComponentActivity() {
                         "Emad",
                         Modifier.padding(innerPadding)
                     )
-                    Greeting(
-                        "Rabie",
-                        Modifier.padding(innerPadding)
-                    )
+
                 }
             }
         }

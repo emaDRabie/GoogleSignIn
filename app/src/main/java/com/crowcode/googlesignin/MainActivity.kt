@@ -1,5 +1,6 @@
 package com.crowcode.googlesignin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -26,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.FontScaling
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 import com.crowcode.googlesignin.ui.theme.GoogleSignInTheme
 import com.crowcode.googlesignin.ui.theme.Green
 
@@ -60,9 +62,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             .background(Green, CircleShape)
             .padding(all = 32.dp)
             .clickable {
-                Toast
-                    .makeText(localContext, "Don not press the text :)", Toast.LENGTH_SHORT)
-                    .show()
+//                Toast
+//                    .makeText(localContext, "Don not press the text :)", Toast.LENGTH_SHORT)
+//                    .show()
+                val i = Intent(localContext, SecondActivity::class.java)
+                localContext.startActivity(i)
             }
     )
 

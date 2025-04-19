@@ -14,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -47,7 +48,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         style = TextStyle(
             fontSize = 24.sp,
             fontFamily = FontFamily.Monospace,
-            color = Black
+            color = Color(0xFFFFFFFF)
         ),
         modifier = modifier
             .padding(start = 32.dp, top = 64.dp)

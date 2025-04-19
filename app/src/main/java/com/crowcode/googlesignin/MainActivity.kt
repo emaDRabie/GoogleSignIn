@@ -10,13 +10,22 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -46,6 +55,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CreatingGoogleDesign(modifier: Modifier = Modifier) {
+    var text by remember { mutableStateOf("") }
+    val brush = remember {
+        Brush.linearGradient(
+            colors = rainbowColors
+        )
+    }
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -69,7 +84,7 @@ fun CreatingGoogleDesign(modifier: Modifier = Modifier) {
                     )
                 ),
             ),
-            modifier = Modifier.padding(top = 24.dp)
+            modifier = Modifier.padding(top = 32.dp)
         )
         Text(
             text = "Use Your Google Account",
@@ -77,8 +92,22 @@ fun CreatingGoogleDesign(modifier: Modifier = Modifier) {
                 fontSize = 18.sp
             ),
             modifier = Modifier
-                .padding(top = 16.dp)
+                .padding(top = 24.dp)
 
+        )
+        OutlinedTextField(
+            value = text,
+            onValueChange = { text = it },
+            label = { Text("Label") },
+            textStyle = TextStyle(
+                brush = brush,
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp
+            ),
+
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 44.dp)
         )
     }
 }
